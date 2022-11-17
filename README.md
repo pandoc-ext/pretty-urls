@@ -1,10 +1,20 @@
-Greetings, a Lua Filter Template
+pretty-urls
 ==================================================================
 
 [![GitHub build status][CI badge]][CI workflow]
 
-Greetings is a friendly Lua filter that adds a welcoming message
-to the document.
+This filter "prettifies" bare URLs by removing the protocol
+prefix, i.e., it drops the `https://` from the link text while
+leaving the actual link unchanged.
+
+Example: the URL `<https://pandoc.org>` is rewritten as if it was
+defined as `[pandoc.org](https://pandoc.org)`.
+
+- **Before**: <https://pandoc.org>
+- **After**: [pandoc.org](https://pandoc.org)
+
+URLs for which the description is different from the target are
+left unchanged.
 
 [CI badge]: https://img.shields.io/github/workflow/status/pandoc-ext/pretty-urls/CI?logo=github
 [CI workflow]: https://github.com/pandoc-ext/pretty-urls/actions/workflows/ci.yaml
