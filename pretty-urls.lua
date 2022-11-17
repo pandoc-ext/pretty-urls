@@ -1,21 +1,21 @@
---- greetings.lua – turns any document into a friendly greeting
+--- pretty-urls.lua – let URLs look a little nicer
 ---
---- Copyright: © 2021–2022 Contributors
+--- Copyright: © 2022 Albert Krewinkel
 --- License: MIT – see LICENSE for details
+-- Ensure a recent enough pandoc version.
+PANDOC_VERSION:must_be_at_least '2.7'
 
--- Makes sure users know if their pandoc version is too old for this
--- filter.
-PANDOC_VERSION:must_be_at_least '2.17'
+local stringify = pandoc.utils.stringify
 
---- Amends the contents of a document with a simple greeting.
-local function say_hello (doc)
-  doc.meta.subtitle = doc.meta.title            -- demote title to subtitle
-  doc.meta.title = pandoc.Inlines 'Greetings!'  -- set new title
-  doc.blocks:insert(1, pandoc.Para 'Hello from the Lua filter!')
-  return doc
+local function prettify_url (link)
+  -- Do not change the link if the description does not match the
+  -- target
+  if stringify(link.content) ~= link.target then
+    return nil
+  end
+
+  link.content = link.target:gsub('^https%:%/%/', '')
+  return link
 end
 
-return {
-  -- Apply the `say_hello` function to the main Pandoc document.
-  { Pandoc = say_hello }
-}
+return {{Link = prettify_url}}

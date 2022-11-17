@@ -1,8 +1,7 @@
----
-title: Lorem ipsum
-author: Nullus
----
+# AutoURL
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-nisl, tincidunt et, mattis eget, convallis nec, purus.
+<https://pandoc.org>
+
+# Content differs from target
+
+[https:// protocol prefix](https://en.wikipedia.org/wiki/HTTPS)
