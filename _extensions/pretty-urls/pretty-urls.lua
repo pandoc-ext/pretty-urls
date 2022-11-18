@@ -9,8 +9,9 @@ local stringify = pandoc.utils.stringify
 
 local function prettify_url (link)
   -- Do not change the link if the description does not match the
-  -- target
-  if stringify(link.content) ~= link.target then
+  -- target and it is not an autolink (marked by the 'uri' class).
+  if stringify(link.content) ~= link.target and
+     not link.classes:includes 'uri' then
     return nil
   end
 

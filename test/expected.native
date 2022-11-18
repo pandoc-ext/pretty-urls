@@ -1,4 +1,13 @@
-[ Header 1 ( "autourl" , [] , [] ) [ Str "AutoURL" ]
+[ Header
+    1
+    ( "tests-for-pretty-urls" , [] , [] )
+    [ Str "Tests"
+    , Space
+    , Str "for"
+    , Space
+    , Code ( "" , [] , [] ) "pretty-urls"
+    ]
+, Header 2 ( "autourl" , [] , [] ) [ Str "AutoURL" ]
 , Para
     [ Link
         ( "" , [ "uri" ] , [] )
@@ -6,7 +15,7 @@
         ( "https://pandoc.org" , "" )
     ]
 , Header
-    1
+    2
     ( "content-differs-from-target" , [] , [] )
     [ Str "Content"
     , Space
@@ -26,5 +35,24 @@
         , Str "prefix"
         ]
         ( "https://en.wikipedia.org/wiki/HTTPS" , "" )
+    ]
+, Header
+    2
+    ( "link-with-special-chars" , [] , [] )
+    [ Str "Link"
+    , Space
+    , Str "with"
+    , Space
+    , Str "special"
+    , Space
+    , Str "chars"
+    ]
+, Para
+    [ Link
+        ( "" , [ "uri" ] , [] )
+        [ Str "de.wikipedia.org/wiki/Lua_(Begriffskl%C3%A4rung)" ]
+        ( "https://de.wikipedia.org/wiki/Lua_(Begriffskl%C3%A4rung)"
+        , ""
+        )
     ]
 ]
