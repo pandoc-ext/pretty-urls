@@ -15,3 +15,7 @@
 ## HTTP link
 
 <http://archive.org>
+
+## DOI link
+
+<https://doi.org/10.7717/peerj-cs.112>
