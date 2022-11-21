@@ -19,3 +19,7 @@
 ## DOI link
 
 <https://doi.org/10.7717/peerj-cs.112>
+
+## `doi` protocol
+
+<doi:10.7717/peerj-cs.112>

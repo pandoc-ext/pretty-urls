@@ -15,6 +15,7 @@ local function prettify_url (link)
     return nil
   end
 
+  -- Remove http and https protocol prefix
   local is_unsafe_protocol = link.target:match '^http%:%/%/' ~= nil
   link_text = link.target
     :gsub('^https?%:%/%/', '')
@@ -23,8 +24,10 @@ local function prettify_url (link)
   if is_unsafe_protocol then
     link_text = link_text .. ' 🔓'
   end
-
   link.content = {pandoc.Str(link_text)}
+
+  -- fix DOI links
+  link.target = link.target:gsub('^doi%:', 'https://doi.org/')
 
   return link
 end

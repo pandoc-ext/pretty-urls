@@ -75,4 +75,14 @@
         [ Str "doi:10.7717/peerj-cs.112" ]
         ( "https://doi.org/10.7717/peerj-cs.112" , "" )
     ]
+, Header
+    2
+    ( "doi-protocol" , [] , [] )
+    [ Code ( "" , [] , [] ) "doi" , Space , Str "protocol" ]
+, Para
+    [ Link
+        ( "" , [ "uri" ] , [] )
+        [ Str "doi:10.7717/peerj-cs.112" ]
+        ( "https://doi.org/10.7717/peerj-cs.112" , "" )
+    ]
 ]
