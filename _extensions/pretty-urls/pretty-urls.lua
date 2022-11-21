@@ -15,8 +15,17 @@ local function prettify_url (link)
     return nil
   end
 
-  link.content = link.target:gsub('^https?%:%/%/', '')
-  link.content = link.content:gsub('^(d?x?%.?)doi%.org%/', 'DOI:') --prettify DOIs
+  local is_unsafe_protocol = link.target:match '^http%:%/%/' ~= nil
+  link_text = link.target
+    :gsub('^https?%:%/%/', '')
+    :gsub('^(d?x?%.?)doi%.org%/', 'DOI:') --prettify DOIs
+
+  if is_unsafe_protocol then
+    link_text = link_text .. ' 🔓'
+  end
+
+  link.content = {pandoc.Str(link_text)}
+
   return link
 end
 
