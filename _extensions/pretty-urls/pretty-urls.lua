@@ -14,7 +14,8 @@ local function prettify_url (link)
     return nil
   end
 
-  link.content = link.target:gsub('^https%:%/%/', '')
+  link.content = link.target:gsub('^http(s)?%:%/%/', '')
+  link.content = link.content:gsub('^(d?x?%.?)doi%.org%/', 'DOI:') --prettify DOIs
   return link
 end
 
