@@ -18,7 +18,7 @@ local function prettify_url (link)
   local is_unsafe_protocol = link.target:match '^http%:%/%/' ~= nil
   link_text = link.target
     :gsub('^https?%:%/%/', '')
-    :gsub('^(d?x?%.?)doi%.org%/', 'DOI:') --prettify DOIs
+    :gsub('^(d?x?%.?)doi%.org%/', 'doi:') --prettify DOIs
 
   if is_unsafe_protocol then
     link_text = link_text .. ' 🔓'
