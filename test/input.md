@@ -11,3 +11,7 @@
 ## Link with special chars
 
 <https://de.wikipedia.org/wiki/Lua_(Begriffskl%C3%A4rung)>
+
+## HTTP link
+
+<http://archive.org>
