@@ -16,7 +16,7 @@ defined as `[pandoc.org](https://pandoc.org)`.
 URLs for which the description is different from the target are
 left unchanged.
 
-[CI badge]: https://img.shields.io/github/workflow/status/pandoc-ext/pretty-urls/CI?logo=github
+[CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/pretty-urls/ci.yaml?branch=main&logo=github
 [CI workflow]: https://github.com/pandoc-ext/pretty-urls/actions/workflows/ci.yaml
 
 
